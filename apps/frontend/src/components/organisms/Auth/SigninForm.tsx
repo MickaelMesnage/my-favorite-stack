@@ -2,20 +2,20 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-export const signupFormZodSchema = z.object({
+export const signinFormZodSchema = z.object({
   email: z.string(),
   password: z.string(),
 });
 
-export type SignupFormFieldsValue = z.infer<typeof signupFormZodSchema>;
+export type SigninFormFieldsValue = z.infer<typeof signinFormZodSchema>;
 
-export type SignupFormProps = {
-  onSubmit: (data: SignupFormFieldsValue) => Promise<void>;
+export type SigninFormProps = {
+  onSubmit: (data: SigninFormFieldsValue) => Promise<void>;
 };
 
-export const SignupForm = ({ onSubmit }: SignupFormProps) => {
-  const methods = useForm<SignupFormFieldsValue>({
-    resolver: zodResolver(signupFormZodSchema),
+export const SigninForm = ({ onSubmit }: SigninFormProps) => {
+  const methods = useForm<SigninFormFieldsValue>({
+    resolver: zodResolver(signinFormZodSchema),
   });
 
   const { handleSubmit, register } = methods;
@@ -31,7 +31,7 @@ export const SignupForm = ({ onSubmit }: SignupFormProps) => {
           Password
           <input type="password" {...register("password")} />
         </label>
-        <button type="submit">Signup</button>
+        <button type="submit">Signin</button>
       </form>
     </FormProvider>
   );

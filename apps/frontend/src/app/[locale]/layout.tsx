@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/organisms/Header/Header";
+import { AuthProvider } from "@/components/organisms/Auth/AuthProvider";
+import dynamic from "next/dynamic";
 
 export function generateStaticParams() {
   return [{ locale: "en" }];
@@ -33,10 +35,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
+        <AuthProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
+            {children}
+          </NextIntlClientProvider>
+        </AuthProvider>
       </body>
     </html>
   );
