@@ -3,9 +3,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/organisms/Header/Header";
-import { AuthProvider } from "@/components/organisms/Auth/AuthProvider";
+import { Header } from "@/src/components/organisms/Header";
+import { AuthProvider } from "@/src/components/organisms/Auth/AuthProvider";
 import dynamic from "next/dynamic";
+import { Box, Container, VStack } from "@/panda/jsx";
+import { css } from "@/panda/css";
+import { Footer } from "@/src/components/organisms/Footer";
 
 export function generateStaticParams() {
   return [{ locale: "en" }];
@@ -37,8 +40,19 @@ export default async function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <Header />
-            {children}
+            <Box width="full" height="full" overflowY="auto">
+              <Header className={css({ height: 16 })} />
+              <VStack
+                width="full"
+                height="calc(100% - 4rem)"
+                justifyContent="space-between"
+              >
+                <Container maxWidth={"breakpoint-xl"} paddingY={6}>
+                  {children}
+                </Container>
+                <Footer />
+              </VStack>
+            </Box>
           </NextIntlClientProvider>
         </AuthProvider>
       </body>

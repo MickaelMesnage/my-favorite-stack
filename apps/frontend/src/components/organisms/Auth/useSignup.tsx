@@ -1,5 +1,5 @@
-import { SignupFormFieldsValue } from "@/components/organisms/Auth/SignupForm";
-import { postAuthApi } from "@/components/organisms/Auth/utils";
+import { SignupFormFieldsValue } from "@/src/components/organisms/Auth/SignupForm";
+import { postAuthApi } from "@/src/components/organisms/Auth/utils";
 import { useRouter } from "next/navigation";
 
 export const useSignup = () => {

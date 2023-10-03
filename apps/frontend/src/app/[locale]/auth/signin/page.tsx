@@ -1,4 +1,5 @@
-import { Signin } from "@/components/organisms/Auth/Signin";
+import { Flex } from "@/panda/jsx";
+import { Signin } from "@/src/components/organisms/Auth/Signin";
 
 export default function AuthSigninPage() {
   return (

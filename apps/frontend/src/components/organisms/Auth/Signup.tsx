@@ -3,8 +3,8 @@
 import {
   SignupForm,
   SignupFormFieldsValue,
-} from "@/components/organisms/Auth/SignupForm";
-import { useSignup } from "@/components/organisms/Auth/useSignup";
+} from "@/src/components/organisms/Auth/SignupForm";
+import { useSignup } from "@/src/components/organisms/Auth/useSignup";
 import Link from "next/link";
 
 export const Signup = () => {

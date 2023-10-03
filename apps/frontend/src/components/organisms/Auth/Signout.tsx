@@ -1,9 +1,10 @@
 "use client";
 
-import { useAuth } from "@/components/organisms/Auth/AuthProvider";
+import { Button } from "@/src/components/atoms/Button";
+import { useAuth } from "@/src/components/organisms/Auth/AuthProvider";
 
 export const Signout = () => {
   const { logout } = useAuth();
 
-  return <button onClick={logout}>Signout</button>;
+  return <Button onClick={logout}>Signout</Button>;
 };

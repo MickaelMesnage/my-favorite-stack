@@ -1,0 +1,14 @@
+@layer reset, base, tokens, recipes, utilities;
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+label {
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}

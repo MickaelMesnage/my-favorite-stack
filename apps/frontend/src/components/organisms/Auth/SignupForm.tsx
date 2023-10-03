@@ -1,6 +1,9 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
+import { Input } from "@/src/components/atoms/Input";
+import { css } from "@/panda/css";
+import { Button } from "@/src/components/atoms/Button";
 
 export const signupFormZodSchema = z.object({
   email: z.string(),
@@ -23,15 +26,15 @@ export const SignupForm = ({ onSubmit }: SignupFormProps) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
+        <label className={css({ width: "full" })}>
           Email
-          <input type="text" {...register("email")} />
+          <Input type="text" {...register("email")} />
         </label>
         <label>
           Password
-          <input type="password" {...register("password")} />
+          <Input type="password" {...register("password")} />
         </label>
-        <button type="submit">Signup</button>
+        <Button type="submit">Signup</Button>
       </form>
     </FormProvider>
   );

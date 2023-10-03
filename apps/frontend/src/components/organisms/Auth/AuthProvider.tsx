@@ -1,7 +1,7 @@
 "use client";
 
-import { useToken } from "@/components/organisms/Auth/useToken";
-import { postAuthApi } from "@/components/organisms/Auth/utils";
+import { useToken } from "@/src/components/organisms/Auth/useToken";
+import { postAuthApi } from "@/src/components/organisms/Auth/utils";
 import { useRouter } from "next/navigation";
 import {
   createContext,

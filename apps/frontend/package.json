@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -23,5 +24,8 @@
     "typescript": "5.2.2",
     "zod": "3.21.4",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.15.4"
   }
 }
